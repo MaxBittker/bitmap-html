@@ -9,6 +9,7 @@ import Margin from "./Margin.js";
 import Column from "./Column.js";
 import Row from "./Row.js";
 import Bitmap from "./Bitmap";
+import Random from "./RandomFill";
 import Cross from "./Cross";
 
 const Bounds = createContext({
@@ -72,7 +73,7 @@ export const App = () => {
                               </Margin>
                               <Margin margin={-4}>
                                 <Border>
-                                  <Cross />
+                                  <Random />
                                 </Border>
                               </Margin>
                               <Margin margin={-4}>
