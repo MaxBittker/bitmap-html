@@ -1,5 +1,6 @@
 {
   "name": "bitmap-html",
+  "homepage": "/bitmap-html",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
