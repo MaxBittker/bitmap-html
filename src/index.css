@@ -35,7 +35,7 @@ canvas,
 #root,
 #root > div,
 #root > div > div {
-  height: 100vh;
-  height: -webkit-fill-available;
-  height: fill-available;
+  height: 100vh !important;
+  height: -webkit-fill-available !important;
+  height: fill-available !important;
 }
