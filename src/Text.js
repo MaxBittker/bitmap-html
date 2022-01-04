@@ -33,7 +33,7 @@ const TextC = ({ fontSize, text, family }) => {
             fontFamily: family === "serif" ? "Mondwest" : "NeueBit",
             fontSize: `${_fontSize * 2}px`,
             // color: "transparent",
-            // whiteSpace: "nowrap",
+            whiteSpace: "nowrap",
           }}
         >
           {text}
