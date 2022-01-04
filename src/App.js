@@ -11,6 +11,7 @@ import Row from "./Row.js";
 import Bitmap from "./Bitmap";
 import Random from "./RandomFill";
 import Cross from "./Cross";
+import setFavicon from "./Favicon";
 
 const Bounds = createContext({
   x: 0,
@@ -33,6 +34,7 @@ export const App = () => {
     }),
     [size]
   );
+  setFavicon();
   return (
     // Stage - is a div wrapper
     // Layer - is an actual 2d canvas element, so you can have several layers inside the stage
