@@ -31,7 +31,10 @@ canvas {
 
 html,
 body,
-canvas {
+canvas,
+#root,
+#root > div,
+#root > div > div {
   height: 100vh;
   height: -webkit-fill-available;
   height: fill-available;
