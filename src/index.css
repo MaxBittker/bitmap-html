@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Chicago";
+  src: url("./fonts/ChiKareGo2.ttf");
+}
+
+@font-face {
+  font-family: "Mondwest";
+  src: url("./fonts/PPMondwest-Regular.otf") format("truetype");
+  font-weight: 100;
+}
+
+body {
+  margin: 0;
+  font-family: "Mondwest", sans-serif;
+  font-smooth: antialiased;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
