@@ -22,6 +22,7 @@ body {
   /* -moz-osx-font-smoothing: grayscale; */
   font-smooth: never;
   -webkit-font-smoothing: none;
+  overflow: hidden;
 }
 canvas {
   -ms-interpolation-mode: nearest-neighbor;
