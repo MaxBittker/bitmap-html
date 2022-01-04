@@ -16,12 +16,16 @@
 body {
   margin: 0;
   font-family: "Mondwest", sans-serif;
-  font-smooth: antialiased;
+  /* font-smooth: antialiased; */
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+  font-smooth: never;
+  -webkit-font-smoothing: none;
 }
 canvas {
   -ms-interpolation-mode: nearest-neighbor;
   image-rendering: pixelated;
+  width: 100vw !important;
+  height: 100vh !important;
 }

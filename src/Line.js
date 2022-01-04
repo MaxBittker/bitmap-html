@@ -2,9 +2,9 @@ import { Shape } from "react-konva";
 
 function plotLine(x0, y0, x1, y1, drawPixel) {
   var dx = Math.abs(x1 - x0),
-    sx = x0 < x1 ? 2 : -2;
+    sx = x0 < x1 ? 1 : -1;
   var dy = -Math.abs(y1 - y0),
-    sy = y0 < y1 ? 2 : -2;
+    sy = y0 < y1 ? 1 : -1;
   var err = dx + dy,
     e2; /* error value e_xy */
   let i = 0;
@@ -15,7 +15,7 @@ function plotLine(x0, y0, x1, y1, drawPixel) {
     }
     /* loop */
     drawPixel(x0, y0);
-    if (Math.abs(x0 - x1) <= 2 && Math.abs(y0 - y1) <= 2) break;
+    if (Math.abs(x0 - x1) <= 1 && Math.abs(y0 - y1) <= 1) break;
     e2 = 2 * err;
     if (e2 >= dy) {
       err += dy;
@@ -40,7 +40,7 @@ const Line = ({ x, y, x2, y2 }) => {
           x2,
           y2,
 
-          (xx, yy) => context.rect(xx, yy, 2, 2)
+          (xx, yy) => context.rect(xx, yy, 1, 1)
         );
 
         context.closePath();

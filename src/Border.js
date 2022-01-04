@@ -6,18 +6,19 @@ const Border = ({ children }) => {
       {(bounds) => (
         <>
           <Rect
-            x={bounds.x + 4}
-            y={bounds.y + 4}
-            width={bounds.width - 8}
-            height={bounds.height - 8}
+            x={bounds.x + 2.5}
+            y={bounds.y + 2.5}
+            width={bounds.width - 4}
+            height={bounds.height - 4}
             stroke="black"
+            strokeWidth={1}
           />
           <Bounds.Provider
             value={{
-              x: bounds.x + 4,
-              y: bounds.y + 4,
-              width: bounds.width - 8,
-              height: bounds.height - 8,
+              x: bounds.x + 2,
+              y: bounds.y + 2,
+              width: bounds.width - 4,
+              height: bounds.height - 4,
             }}
           >
             {children}

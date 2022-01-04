@@ -1,4 +1,3 @@
-import "./App.css";
 import { createContext, useMemo } from "react";
 import { Stage, Layer } from "react-konva";
 import { useTimer, useWindowSize } from "./utils.js";
@@ -29,8 +28,8 @@ export const App = () => {
     () => ({
       x: 0,
       y: 0,
-      width: window.innerWidth,
-      height: window.innerHeight,
+      width: Math.floor((window.innerWidth - 1) / 2),
+      height: Math.floor((window.innerHeight - 1) / 2),
     }),
     [size]
   );
@@ -39,10 +38,10 @@ export const App = () => {
     // Stage - is a div wrapper
     // Layer - is an actual 2d canvas element, so you can have several layers inside the stage
     <>
-      <Stage width={window.innerWidth} height={window.innerHeight}>
+      <Stage width={initBounds.width} height={initBounds.height}>
         <Layer pix>
           <Bounds.Provider value={initBounds}>
-            <Margin margin={-2}>
+            <Margin margin={-1}>
               <Border>
                 <Border>
                   <Border>
@@ -50,16 +49,20 @@ export const App = () => {
                       <HR>
                         <HR>
                           <Column>
-                            <Column lineHeight={54}>
+                            <Column lineHeight={32}>
                               <Text
                                 text={`HTML de' Bitmap ~*~*~*~`}
-                                fontSize={50}
+                                fontSize={32}
+                                family={"serif"}
                               ></Text>
                               <Text
                                 text={Math.floor(timer.time / 100)}
-                                fontSize={50}
+                                fontSize={32}
                               ></Text>
-                              <Text text={3} fontSize={50}></Text>
+                              <Text
+                                text={"Sans serif Text"}
+                                fontSize={32}
+                              ></Text>
                             </Column>
                             <Border>
                               <Cross />
@@ -68,22 +71,22 @@ export const App = () => {
                             <Cross />
 
                             <Row>
-                              <Margin margin={-4}>
+                              <Margin margin={-2}>
                                 <Border>
                                   <Bitmap />
                                 </Border>
                               </Margin>
-                              <Margin margin={-4}>
+                              <Margin margin={-2}>
                                 <Border>
                                   <Random />
                                 </Border>
                               </Margin>
-                              <Margin margin={-4}>
+                              <Margin margin={-2}>
                                 <Border>
                                   <Cross />
                                 </Border>
                               </Margin>
-                              <Margin margin={-4}>
+                              <Margin margin={-2}>
                                 <Border>
                                   <Cross />
                                 </Border>

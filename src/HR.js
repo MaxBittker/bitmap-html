@@ -7,15 +7,16 @@ const HR = ({ children }) => {
         <>
           <Line
             x={bounds.x}
-            y={bounds.y + 4}
+            y={bounds.y + 2 + 0.5}
             points={[0, 0, bounds.width, 0]}
             stroke="black"
+            strokeWidth={1}
           />
           <Bounds.Provider
             value={{
               ...bounds,
-              y: bounds.y + 4,
-              height: bounds.height - 8,
+              y: bounds.y + 2,
+              height: bounds.height - 4,
             }}
           >
             {children}

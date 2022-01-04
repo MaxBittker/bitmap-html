@@ -3,43 +3,37 @@ import { useContext } from "react";
 import { Html } from "react-konva-utils";
 import { Bounds } from "./App";
 
-const TextC = ({ fontSize, text }) => {
+const TextC = ({ fontSize, text, family }) => {
   const bounds = useContext(Bounds);
 
   let _fontSize = Math.floor(Math.min(fontSize, bounds.height));
   return (
     <>
       <Text
-        x={bounds.x}
+        x={bounds.x + 1}
         y={bounds.y + 1}
         text={text}
-        fontFamily="Mondwest"
+        fontFamily={family === "serif" ? "Mondwest" : "NeueBit"}
         fontSize={_fontSize}
-      />
-      <Text
-        x={bounds.x}
-        y={bounds.y + 1}
-        text={text}
-        fontFamily="Mondwest"
-        fontSize={_fontSize}
+        fill="transparent"
       />
 
       <Html
         divProps={{
           style: {
             position: "absolute",
-            left: `${bounds.x}px`,
-            top: `${bounds.y}px`,
+            left: `${(bounds.x + 0.5) * 2}px`,
+            top: `${(bounds.y - 0.5) * 2}px`,
             zIndex: "20",
           },
         }}
       >
         <div
           style={{
-            fontFamily: "Mondwest",
-            fontSize: `${_fontSize}px`,
-            color: "transparent",
-            whiteSpace: "nowrap",
+            fontFamily: family === "serif" ? "Mondwest" : "NeueBit",
+            fontSize: `${_fontSize * 2}px`,
+            // color: "transparent",
+            // whiteSpace: "nowrap",
           }}
         >
           {text}

@@ -13,13 +13,13 @@ const Bitmap = () => {
         context.beginPath();
         // http://members.chello.at/easyfilter/bresenham.js
         let i = 0;
-        for (let x = bounds.x; x < bounds.width + bounds.x; x += 2) {
-          for (let y = bounds.y; y < bounds.height + bounds.y; y += 2) {
+        for (let x = bounds.x; x < bounds.width + bounds.x; x += 1) {
+          for (let y = bounds.y; y < bounds.height + bounds.y; y += 1) {
             if (i++ > 100000) {
               break;
             }
-            if ((((x / 2) * y) / 2) % 2 === 0) {
-              context.rect(x, y, 2, 2);
+            if ((x + y) % (i % 7) == 0) {
+              context.rect(x, y, 1, 1);
             }
             // if (Math.random() > 0.9) {
             //   context.rect(x, y, 2, 2);
