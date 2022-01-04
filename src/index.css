@@ -27,5 +27,12 @@ canvas {
   -ms-interpolation-mode: nearest-neighbor;
   image-rendering: pixelated;
   width: 100vw !important;
-  height: 100vh !important;
+}
+
+html,
+body,
+canvas {
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
 }
