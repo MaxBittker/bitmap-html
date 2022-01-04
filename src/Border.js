@@ -8,8 +8,8 @@ const Border = ({ children }) => {
           <Rect
             x={bounds.x + 2.5}
             y={bounds.y + 2.5}
-            width={bounds.width - 4}
-            height={bounds.height - 4}
+            width={bounds.width - 5}
+            height={bounds.height - 5}
             stroke="black"
             strokeWidth={1}
           />

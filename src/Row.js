@@ -12,7 +12,7 @@ const Row = ({ children }) => {
                   ...bounds,
                   x:
                     bounds.x + Math.round((bounds.width / children.length) * i),
-                  width: Math.round(bounds.width / children.length),
+                  width: Math.round(bounds.width / children.length) + 1,
                 }}
               >
                 {child}
