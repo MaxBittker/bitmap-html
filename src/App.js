@@ -34,6 +34,7 @@ export const App = () => {
     [size]
   );
   setFavicon();
+  let t = Math.floor(timer.time / 100);
   return (
     // Stage - is a div wrapper
     // Layer - is an actual 2d canvas element, so you can have several layers inside the stage
@@ -55,20 +56,32 @@ export const App = () => {
                                 fontSize={32}
                                 family={"serif"}
                               ></Text>
-                              <Text
-                                text={Math.floor(timer.time / 100)}
-                                fontSize={32}
-                              ></Text>
+                              <Text text={t} fontSize={32}></Text>
                               <Text
                                 text={"Sans serif Text"}
                                 fontSize={32}
                               ></Text>
                             </Column>
-                            <Border>
-                              <Cross />
-                            </Border>
-
-                            <Cross />
+                            <Column>
+                              <Row>
+                                {[20, 24, 26, 27].map((s) => (
+                                  <Border key={s}>
+                                    <Text
+                                      key={s}
+                                      text={"abc " + s}
+                                      fontSize={s}
+                                    ></Text>
+                                  </Border>
+                                ))}
+                              </Row>
+                              <Row>
+                                {[28, 29, 39].map((s) => (
+                                  <Border key={s}>
+                                    <Text text={"abc " + s} fontSize={s}></Text>
+                                  </Border>
+                                ))}
+                              </Row>
+                            </Column>
 
                             <Row>
                               <Margin margin={-2}>
