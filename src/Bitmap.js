@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 
 import { Shape, Rect } from "react-konva";
 
-import { Bounds } from "./App";
+import { Bounds, pixelSize } from "./App";
 
 const Bitmap = () => {
   const bounds = useContext(Bounds);
@@ -24,19 +24,22 @@ const Bitmap = () => {
       <Shape
         sceneFunc={(context, shape) => {
           context.beginPath();
+          context.rect(bounds.x, bounds.y, pixelSize, pixelSize);
+
           // http://members.chello.at/easyfilter/bresenham.js
           let i = 0;
-          for (let x = bounds.x; x < bounds.width + bounds.x; x += 1) {
-            for (let y = bounds.y; y < bounds.height + bounds.y; y += 1) {
+          for (let x = bounds.x; x < bounds.width + bounds.x; x += pixelSize) {
+            for (
+              let y = bounds.y;
+              y < bounds.height + bounds.y;
+              y += pixelSize
+            ) {
               if (i++ > 100000) {
                 break;
               }
               if ((x + y) % (i % v) == 0) {
-                context.rect(x, y, 1, 1);
+                context.rect(x, y, pixelSize, pixelSize);
               }
-              // if (Math.random() > 0.9) {
-              //   context.rect(x, y, 2, 2);
-              // }
             }
           }
 

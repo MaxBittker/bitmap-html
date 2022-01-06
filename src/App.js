@@ -20,6 +20,8 @@ const Bounds = createContext({
 });
 
 export { Bounds };
+export const pixelRatio = 2;
+export const pixelSize = 2;
 
 export const App = () => {
   const timer = useTimer();
@@ -28,8 +30,8 @@ export const App = () => {
     () => ({
       x: 0,
       y: 0,
-      width: Math.floor((window.innerWidth - 1) / 2),
-      height: Math.floor((window.innerHeight - 1) / 2),
+      width: Math.round(window.innerWidth / pixelRatio),
+      height: Math.round(window.innerHeight / pixelRatio),
     }),
     [size]
   );
@@ -42,75 +44,77 @@ export const App = () => {
       <Stage width={initBounds.width} height={initBounds.height}>
         <Layer pix>
           <Bounds.Provider value={initBounds}>
-            <Margin margin={-1}>
+            <Margin margin={-pixelSize * 0}>
               <Border>
-                <Border>
+                <Border color="transparent">
                   <Border>
-                    <HR>
-                      <HR>
+                    <Border color="transparent">
+                      <Border>
                         <HR>
-                          <Column>
-                            <Column lineHeight={32}>
-                              <Text
-                                text={`HTML de' Bitmap ~*~*~*~`}
-                                fontSize={32}
-                                family={"serif"}
-                              ></Text>
-                              <Text text={t} fontSize={32}></Text>
-                              <Text
-                                text={"Sans serif Text"}
-                                fontSize={32}
-                              ></Text>
-                            </Column>
-                            <Column>
-                              <Row>
-                                {[20, 24, 26, 27].map((s) => (
-                                  <Border key={s}>
-                                    <Text
-                                      key={s}
-                                      text={"abc " + s}
-                                      fontSize={s}
-                                    ></Text>
-                                  </Border>
-                                ))}
-                              </Row>
-                              <Row>
-                                {[28, 29, 39].map((s) => (
-                                  <Border key={s}>
-                                    <Text text={"abc " + s} fontSize={s}></Text>
-                                  </Border>
-                                ))}
-                              </Row>
-                            </Column>
+                          <HR>
+                            <HR>
+                              <Column>
+                                <Column lineHeight={40}>
+                                  <Text
+                                    text={`HTML de' Bitmap ~*~*~*~`}
+                                    fontSize={22}
+                                    family={"serif"}
+                                  ></Text>
+                                  <Text text={t} fontSize={22}></Text>
+                                  <Text
+                                    text={"Sans serif Text"}
+                                    fontSize={22}
+                                  ></Text>
+                                </Column>
+                                <Column>
+                                  <Row>
+                                    {[20, 24, 26, 27].map((s) => (
+                                      <Border key={s}>
+                                        <Text
+                                          key={s}
+                                          text={"abc " + s}
+                                          fontSize={s}
+                                        ></Text>
+                                      </Border>
+                                    ))}
+                                  </Row>
+                                  <Row>
+                                    {[28, 29, 39].map((s) => (
+                                      <Border key={s}>
+                                        <Text
+                                          text={"abc " + s}
+                                          fontSize={s}
+                                        ></Text>
+                                      </Border>
+                                    ))}
+                                  </Row>
+                                </Column>
 
-                            <Row>
-                              <Margin margin={-2}>
-                                <Border>
-                                  <Bitmap />
-                                </Border>
-                              </Margin>
-                              <Margin margin={-2}>
-                                <Border>
-                                  <Random />
-                                </Border>
-                              </Margin>
-                              <Margin margin={-2}>
-                                <Border>
-                                  <Cross />
-                                </Border>
-                              </Margin>
-                              <Margin margin={-2}>
-                                <Border>
-                                  <Cross />
-                                </Border>
-                              </Margin>
-                            </Row>
-                          </Column>
-                          {/* <Cross /> */}
-                          {/* <Cross /> */}
+                                <Row>
+                                  <Border>
+                                    <Bitmap />
+                                  </Border>
+
+                                  <Border>
+                                    <Random />
+                                  </Border>
+
+                                  <Border>
+                                    <Cross />
+                                  </Border>
+
+                                  <Border>
+                                    <Cross />
+                                  </Border>
+                                </Row>
+                                <Cross />
+                              </Column>
+                              {/* <Cross /> */}
+                            </HR>
+                          </HR>
                         </HR>
-                      </HR>
-                    </HR>
+                      </Border>
+                    </Border>
                   </Border>
                 </Border>
               </Border>

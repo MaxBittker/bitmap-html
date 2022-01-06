@@ -1,24 +1,26 @@
 import { Rect } from "react-konva";
-import { Bounds } from "./App";
-const Border = ({ children }) => {
+import { Bounds, pixelSize } from "./App";
+
+const Border = ({ children, color = "black" }) => {
+  // const Border = ({ children, color = "rgba(255,0,255,0.5)" }) => {
   return (
     <Bounds.Consumer>
       {(bounds) => (
         <>
           <Rect
-            x={bounds.x + 2.5}
-            y={bounds.y + 2.5}
-            width={bounds.width - 5}
-            height={bounds.height - 5}
-            stroke="black"
-            strokeWidth={1}
+            x={bounds.x + pixelSize / 2}
+            y={bounds.y + pixelSize / 2}
+            width={bounds.width - pixelSize * 1.0}
+            height={bounds.height - pixelSize}
+            stroke={color}
+            strokeWidth={pixelSize}
           />
           <Bounds.Provider
             value={{
-              x: bounds.x + 2,
-              y: bounds.y + 2,
-              width: bounds.width - 4,
-              height: bounds.height - 4,
+              x: bounds.x + pixelSize,
+              y: bounds.y + pixelSize,
+              width: bounds.width - pixelSize * 2,
+              height: bounds.height - pixelSize * 2,
             }}
           >
             {children}

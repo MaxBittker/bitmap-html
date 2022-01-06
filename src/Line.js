@@ -1,21 +1,22 @@
 import { Shape } from "react-konva";
+import { pixelSize } from "./App";
 
 function plotLine(x0, y0, x1, y1, drawPixel) {
   var dx = Math.abs(x1 - x0),
-    sx = x0 < x1 ? 1 : -1;
+    sx = x0 < x1 ? pixelSize : -pixelSize;
   var dy = -Math.abs(y1 - y0),
-    sy = y0 < y1 ? 1 : -1;
+    sy = y0 < y1 ? pixelSize : -pixelSize;
   var err = dx + dy,
     e2; /* error value e_xy */
   let i = 0;
   for (;;) {
     i++;
     if (i > 1000) {
-      // break;
+      break;
     }
     /* loop */
     drawPixel(x0, y0);
-    if (Math.abs(x0 - x1) <= 1 && Math.abs(y0 - y1) <= 1) break;
+    if (Math.abs(x0 - x1) < pixelSize && Math.abs(y0 - y1) < pixelSize) break;
     e2 = 2 * err;
     if (e2 >= dy) {
       err += dy;
@@ -40,7 +41,7 @@ const Line = ({ x, y, x2, y2 }) => {
           x2,
           y2,
 
-          (xx, yy) => context.rect(xx, yy, 1, 1)
+          (xx, yy) => context.rect(xx, yy, pixelSize, pixelSize)
         );
 
         context.closePath();

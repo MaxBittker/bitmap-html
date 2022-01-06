@@ -1,5 +1,5 @@
-import { Bounds } from "./App";
-import { useRef, useEffect, useContext } from "react";
+import { Bounds, pixelSize } from "./App";
+import { useContext } from "react";
 
 const Column = ({ children, lineHeight }) => {
   const bounds = useContext(Bounds);
@@ -8,6 +8,7 @@ const Column = ({ children, lineHeight }) => {
   if (lh > maxlineHeight) {
     lh = maxlineHeight;
   }
+
   return (
     <>
       {children.map((child, i) => {
@@ -18,7 +19,7 @@ const Column = ({ children, lineHeight }) => {
               ...bounds,
               y: bounds.y + lh * i,
 
-              height: lh,
+              height: lh + pixelSize,
             }}
           >
             {child}
