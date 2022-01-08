@@ -1,4 +1,9 @@
 import { useState, useRef, useCallback, useMemo, useEffect } from "react";
+import { pixelSize } from "./App";
+
+export function snapPx(i) {
+  return Math.round(i / pixelSize) * pixelSize;
+}
 export function useTimer({ frequency = 100 } = {}) {
   const [time, setTime] = useState(-1);
   const startTime = useRef();

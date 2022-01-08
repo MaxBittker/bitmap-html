@@ -53,63 +53,66 @@ export const App = () => {
                         <HR>
                           <HR>
                             <HR>
-                              <Column>
-                                <Column lineHeight={40}>
-                                  <Text
-                                    text={`HTML de' Bitmap ~*~*~*~`}
-                                    fontSize={22}
-                                    family={"serif"}
-                                  ></Text>
-                                  <Text text={t} fontSize={22}></Text>
-                                  <Text
-                                    text={"Sans serif Text"}
-                                    fontSize={22}
-                                  ></Text>
-                                </Column>
+                              <Margin top={1} bottom={1}>
                                 <Column>
+                                  <Column lineHeight={40}>
+                                    <Text
+                                      text={`HTML de' Bitmap ~*~*~*~`}
+                                      fontSize={22}
+                                      family={"serif"}
+                                    ></Text>
+                                    <Text text={t} fontSize={22}></Text>
+                                    <Text
+                                      text={"Sans serif Text"}
+                                      fontSize={22}
+                                    ></Text>
+                                  </Column>
+                                  <Column>
+                                    <Row>
+                                      {[20, 24, 26, 27].map((s) => (
+                                        <Border key={s}>
+                                          <Text
+                                            key={s}
+                                            text={"abc " + s}
+                                            fontSize={s}
+                                          ></Text>
+                                        </Border>
+                                      ))}
+                                    </Row>
+                                    <Row>
+                                      {[28, 29, 39].map((s) => (
+                                        <Border key={s}>
+                                          <Text
+                                            text={"abc " + s}
+                                            fontSize={s}
+                                          ></Text>
+                                        </Border>
+                                      ))}
+                                    </Row>
+                                  </Column>
+
                                   <Row>
-                                    {[20, 24, 26, 27].map((s) => (
-                                      <Border key={s}>
-                                        <Text
-                                          key={s}
-                                          text={"abc " + s}
-                                          fontSize={s}
-                                        ></Text>
-                                      </Border>
-                                    ))}
+                                    <Border>
+                                      <Bitmap />
+                                    </Border>
+
+                                    <Border>
+                                      <Random />
+                                    </Border>
+
+                                    <Border>
+                                      <Cross />
+                                    </Border>
+                                    <Border>
+                                      <Cross />
+                                    </Border>
                                   </Row>
-                                  <Row>
-                                    {[28, 29, 39].map((s) => (
-                                      <Border key={s}>
-                                        <Text
-                                          text={"abc " + s}
-                                          fontSize={s}
-                                        ></Text>
-                                      </Border>
-                                    ))}
-                                  </Row>
+                                  <Border>
+                                    <Cross />
+                                  </Border>
                                 </Column>
-
-                                <Row>
-                                  <Border>
-                                    <Bitmap />
-                                  </Border>
-
-                                  <Border>
-                                    <Random />
-                                  </Border>
-
-                                  <Border>
-                                    <Cross />
-                                  </Border>
-
-                                  <Border>
-                                    <Cross />
-                                  </Border>
-                                </Row>
-                                <Cross />
-                              </Column>
-                              {/* <Cross /> */}
+                                {/* <Cross /> */}
+                              </Margin>
                             </HR>
                           </HR>
                         </HR>
