@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/bitmap-html/static/css/main.c57d6fcd.css",
-    "main.js": "/bitmap-html/static/js/main.2646b6e6.js",
+    "main.css": "/bitmap-html/static/css/main.16033b09.css",
+    "main.js": "/bitmap-html/static/js/main.6acf14f3.js",
     "static/js/787.ed58cb27.chunk.js": "/bitmap-html/static/js/787.ed58cb27.chunk.js",
     "static/media/PPMondwest-Regular.otf": "/bitmap-html/static/media/PPMondwest-Regular.ce30e67f1fe842818af2.otf",
     "static/media/PPNeueBit-Regular.otf": "/bitmap-html/static/media/PPNeueBit-Regular.4d54e6cdc5f3e06b5eef.otf",
     "static/media/ChiKareGo2.ttf": "/bitmap-html/static/media/ChiKareGo2.8e04a2c65ef398e7f618.ttf",
     "index.html": "/bitmap-html/index.html",
-    "main.c57d6fcd.css.map": "/bitmap-html/static/css/main.c57d6fcd.css.map",
-    "main.2646b6e6.js.map": "/bitmap-html/static/js/main.2646b6e6.js.map",
+    "main.16033b09.css.map": "/bitmap-html/static/css/main.16033b09.css.map",
+    "main.6acf14f3.js.map": "/bitmap-html/static/js/main.6acf14f3.js.map",
     "787.ed58cb27.chunk.js.map": "/bitmap-html/static/js/787.ed58cb27.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c57d6fcd.css",
-    "static/js/main.2646b6e6.js"
+    "static/css/main.16033b09.css",
+    "static/js/main.6acf14f3.js"
   ]
 }
