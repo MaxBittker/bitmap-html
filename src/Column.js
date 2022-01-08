@@ -10,7 +10,7 @@ const Column = ({ children, lineHeight }) => {
     lh = maxlineHeight;
   }
   lh = snapPx(lh);
-  let remainder = bounds.height - snapPx(lh * children.length - 1) + pixelSize;
+  let remainder = bounds.height - snapPx(lh * children.length - 1);
   return (
     <>
       {children.map((child, i) => {
@@ -25,7 +25,7 @@ const Column = ({ children, lineHeight }) => {
               ...bounds,
               y: snapPx(bounds.y + lh * i),
 
-              height: lh + pixelSize + bonus,
+              height: lh + bonus,
             }}
           >
             {child}

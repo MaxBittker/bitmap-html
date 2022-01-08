@@ -5,7 +5,7 @@ const Row = ({ children }) => {
   const bounds = useContext(Bounds);
 
   let rw = snapPx(bounds.width / children.length);
-  let remainder = bounds.width - snapPx(rw * children.length - 1) + pixelSize;
+  let remainder = bounds.width - snapPx(rw * children.length - 1);
 
   return (
     <>

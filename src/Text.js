@@ -16,8 +16,8 @@ const TextC = ({ fontSize, text, family }) => {
         text={text}
         fontFamily={family === "serif" ? "Mondwest" : "NeueBit"}
         fontSize={_fontSize}
-        fill="black"
-        // fill="transparent"
+        // fill="black"
+        fill="transparent"
       />
 
       <Html
@@ -36,7 +36,7 @@ const TextC = ({ fontSize, text, family }) => {
           style={{
             fontFamily: family === "serif" ? "Mondwest" : "NeueBit",
             fontSize: `${_fontSize * 2}px`,
-            color: "transparent",
+            // color: "transparent",
             // color: "red",
             whiteSpace: "nowrap",
             lineHeight: `${_fontSize * lineHeight * 2}px`,
